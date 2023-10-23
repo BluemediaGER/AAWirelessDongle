@@ -3,9 +3,9 @@
 # Configure USB gadget interfaces
 #
 
-SERIAL_NUMBER="0"
-MANUFACTURER="My Own"
-PRODUCT="AA Wireless Dongle"
+SERIAL_NUMBER="01234567"
+MANUFACTURER="OnePlus"
+PRODUCT="GM1911"
 
 ACCESSORY_GADGET_NAME="accessory"
 DEFAULT_GADGET_NAME="default"
@@ -44,8 +44,8 @@ start() {
 	if [ ! -d "$DEFAULT_GADGET_NAME" ]; then
 		mkdir "$DEFAULT_GADGET_NAME"
 		cd "$DEFAULT_GADGET_NAME"
-		echo "0x1D6B" > idVendor
-		echo "0x0105" > idProduct
+		echo "0x22d9" > idVendor
+		echo "0x2764" > idProduct
 		mkdir strings/0x409
 		echo "$SERIAL_NUMBER" > strings/0x409/serialnumber
 		echo "$MANUFACTURER" > strings/0x409/manufacturer
